@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1731684137485,
     "description" : "",
@@ -7,5 +8,384 @@
     "name" : "Test",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 150.0,
+      "identifier" : "028c1d0f-3f63-35c1-8ae3-3b99ac952266",
+      "position" : {
+        "x" : -1845.0,
+        "y" : -831.5
+      },
+      "style" : { },
+      "width" : 150.0,
+      "zIndex" : 0
+    } ],
+    "maxConcurrentTasks" : 1,
+    "name" : "mongo-to-postgress",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ {
+      "comments" : "",
+      "componentType" : "PROCESS_GROUP",
+      "connections" : [ ],
+      "controllerServices" : [ ],
+      "defaultBackPressureDataSizeThreshold" : "1 GB",
+      "defaultBackPressureObjectThreshold" : 10000,
+      "defaultFlowFileExpiration" : "0 sec",
+      "executionEngine" : "INHERITED",
+      "flowFileConcurrency" : "UNBOUNDED",
+      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+      "funnels" : [ ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2a84a26e-4e06-3cce-8abd-99538047237c",
+      "inputPorts" : [ ],
+      "labels" : [ {
+        "componentType" : "LABEL",
+        "groupIdentifier" : "2a84a26e-4e06-3cce-8abd-99538047237c",
+        "height" : 150.0,
+        "identifier" : "60052ef2-37cc-3d9e-8cfb-f0432f491c6e",
+        "position" : {
+          "x" : -1845.0,
+          "y" : -831.5
+        },
+        "style" : { },
+        "width" : 150.0,
+        "zIndex" : 0
+      } ],
+      "maxConcurrentTasks" : 1,
+      "name" : "mongo-to-postgress",
+      "outputPorts" : [ ],
+      "position" : {
+        "x" : -1528.0,
+        "y" : -944.0
+      },
+      "processGroups" : [ ],
+      "processors" : [ {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-mongodb-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.0.0"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "2a84a26e-4e06-3cce-8abd-99538047237c",
+        "identifier" : "e0289e6a-22e9-3b5b-8a9c-9c7b64e20b7c",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "GetMongo",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -1656.0,
+          "y" : -808.0
+        },
+        "properties" : {
+          "mongo-charset" : "UTF-8",
+          "mongo-date-format" : "yyyy-MM-dd'T'HH:mm:ss'Z'",
+          "json-type" : "Extended",
+          "use-pretty-printing" : "true",
+          "get-mongo-send-empty" : "false"
+        },
+        "propertyDescriptors" : {
+          "mongo-client-service" : {
+            "displayName" : "Client Service",
+            "dynamic" : false,
+            "identifiesControllerService" : true,
+            "name" : "mongo-client-service",
+            "sensitive" : false
+          },
+          "mongo-charset" : {
+            "displayName" : "Character Set",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "mongo-charset",
+            "sensitive" : false
+          },
+          "Query" : {
+            "displayName" : "Query",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Query",
+            "sensitive" : false
+          },
+          "mongo-date-format" : {
+            "displayName" : "Date Format",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "mongo-date-format",
+            "sensitive" : false
+          },
+          "json-type" : {
+            "displayName" : "JSON Type",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "json-type",
+            "sensitive" : false
+          },
+          "Projection" : {
+            "displayName" : "Projection",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Projection",
+            "sensitive" : false
+          },
+          "Mongo Database Name" : {
+            "displayName" : "Mongo Database Name",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Mongo Database Name",
+            "sensitive" : false
+          },
+          "mongo-query-attribute" : {
+            "displayName" : "Query Output Attribute",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "mongo-query-attribute",
+            "sensitive" : false
+          },
+          "results-per-flowfile" : {
+            "displayName" : "Results Per FlowFile",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "results-per-flowfile",
+            "sensitive" : false
+          },
+          "Batch Size" : {
+            "displayName" : "Batch Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Batch Size",
+            "sensitive" : false
+          },
+          "Mongo Collection Name" : {
+            "displayName" : "Mongo Collection Name",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Mongo Collection Name",
+            "sensitive" : false
+          },
+          "Sort" : {
+            "displayName" : "Sort",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Sort",
+            "sensitive" : false
+          },
+          "use-pretty-printing" : {
+            "displayName" : "Pretty Print Results JSON",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "use-pretty-printing",
+            "sensitive" : false
+          },
+          "Limit" : {
+            "displayName" : "Limit",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Limit",
+            "sensitive" : false
+          },
+          "get-mongo-send-empty" : {
+            "displayName" : "Send Empty Result",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "get-mongo-send-empty",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.mongodb.GetMongo",
+        "yieldDuration" : "1 sec"
+      } ],
+      "remoteProcessGroups" : [ ],
+      "scheduledState" : "ENABLED",
+      "statelessFlowTimeout" : "1 min"
+    } ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mongodb-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d8fbe9ad-8ee0-396f-903f-de5fb21f5c6a",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "GetMongo",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -1656.0,
+        "y" : -808.0
+      },
+      "properties" : {
+        "mongo-charset" : "UTF-8",
+        "mongo-date-format" : "yyyy-MM-dd'T'HH:mm:ss'Z'",
+        "json-type" : "Extended",
+        "use-pretty-printing" : "true",
+        "get-mongo-send-empty" : "false"
+      },
+      "propertyDescriptors" : {
+        "mongo-client-service" : {
+          "displayName" : "Client Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "mongo-client-service",
+          "sensitive" : false
+        },
+        "mongo-charset" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-charset",
+          "sensitive" : false
+        },
+        "Query" : {
+          "displayName" : "Query",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Query",
+          "sensitive" : false
+        },
+        "mongo-date-format" : {
+          "displayName" : "Date Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-date-format",
+          "sensitive" : false
+        },
+        "json-type" : {
+          "displayName" : "JSON Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "json-type",
+          "sensitive" : false
+        },
+        "Projection" : {
+          "displayName" : "Projection",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Projection",
+          "sensitive" : false
+        },
+        "Mongo Database Name" : {
+          "displayName" : "Mongo Database Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mongo Database Name",
+          "sensitive" : false
+        },
+        "mongo-query-attribute" : {
+          "displayName" : "Query Output Attribute",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-query-attribute",
+          "sensitive" : false
+        },
+        "results-per-flowfile" : {
+          "displayName" : "Results Per FlowFile",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "results-per-flowfile",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Mongo Collection Name" : {
+          "displayName" : "Mongo Collection Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mongo Collection Name",
+          "sensitive" : false
+        },
+        "Sort" : {
+          "displayName" : "Sort",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Sort",
+          "sensitive" : false
+        },
+        "use-pretty-printing" : {
+          "displayName" : "Pretty Print Results JSON",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "use-pretty-printing",
+          "sensitive" : false
+        },
+        "Limit" : {
+          "displayName" : "Limit",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Limit",
+          "sensitive" : false
+        },
+        "get-mongo-send-empty" : {
+          "displayName" : "Send Empty Result",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "get-mongo-send-empty",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.mongodb.GetMongo",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : { },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "admin",
+    "flowIdentifier" : "Test",
+    "timestamp" : 0
+  }
 }
