@@ -12,7 +12,77 @@
     "comments" : "",
     "componentType" : "PROCESS_GROUP",
     "connections" : [ ],
-    "controllerServices" : [ ],
+    "controllerServices" : [ {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mongodb-services-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-mongodb-client-service-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.0.0"
+        },
+        "type" : "org.apache.nifi.mongodb.MongoDBClientService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "bfc3d7ee-8dde-3a6e-bb05-4e82931d79cc",
+      "name" : "MongoDBControllerService",
+      "properties" : {
+        "ssl-client-auth" : "REQUIRED",
+        "mongo-write-concern" : "ACKNOWLEDGED"
+      },
+      "propertyDescriptors" : {
+        "ssl-context-service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "ssl-context-service",
+          "sensitive" : false
+        },
+        "ssl-client-auth" : {
+          "displayName" : "Client Auth",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "ssl-client-auth",
+          "sensitive" : false
+        },
+        "Database User" : {
+          "displayName" : "Database User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database User",
+          "sensitive" : false
+        },
+        "mongo-uri" : {
+          "displayName" : "Mongo URI",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-uri",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        },
+        "mongo-write-concern" : {
+          "displayName" : "Write Concern",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-write-concern",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.mongodb.MongoDBControllerService"
+    } ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
     "defaultBackPressureObjectThreshold" : 10000,
     "defaultFlowFileExpiration" : "0 sec",
@@ -46,13 +116,13 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "d8fbe9ad-8ee0-396f-903f-de5fb21f5c6a",
+      "identifier" : "6280661d-d211-3557-beb5-cb7437f1261e",
       "maxBackoffPeriod" : "10 mins",
       "name" : "GetMongo",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1864.0,
-        "y" : -904.0
+        "x" : -2541.0,
+        "y" : -1341.5
       },
       "properties" : {
         "mongo-charset" : "UTF-8",
